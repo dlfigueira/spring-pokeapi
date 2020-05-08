@@ -1,10 +1,15 @@
 package pt.figtreestudios.springpokeapi.service;
 
-import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGenerationApi;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGeneration;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokedex;
 
 public interface SpringPokeApiGames {
     PokeApiNamedResourceList getGenerations();
-    PokeApiGenerationApi getGenerationById(Integer id);
-    PokeApiGenerationApi getGenerationByName(String name);
+    PokeApiGeneration getGenerationById(Integer id);
+    PokeApiGeneration getGenerationByName(String name);
+
+    PokeApiNamedResourceList getPokedex();
+    PokeApiPokedex getPokedexById(Integer id);
+    PokeApiPokedex getPokedexByName(String name);
 }

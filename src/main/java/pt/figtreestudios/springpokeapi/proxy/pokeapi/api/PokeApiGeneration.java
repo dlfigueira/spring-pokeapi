@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class PokeApiGenerationApi {
+public class PokeApiGeneration {
     private Integer id;
     private String name;
     private List<PokeApiNamedResource> abilities;

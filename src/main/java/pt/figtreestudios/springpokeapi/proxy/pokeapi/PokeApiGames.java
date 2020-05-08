@@ -4,8 +4,9 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGenerationApi;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGeneration;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokedex;
 
 @FeignClient(name = "pokeapi-games", url = "https://pokeapi.co/api/v2/" +
         "")
@@ -15,8 +16,17 @@ public interface PokeApiGames {
     PokeApiNamedResourceList getGenerations();
 
     @GetMapping("/generation/{id}")
-    PokeApiGenerationApi getGenerationById(@PathVariable("id") Integer id);
+    PokeApiGeneration getGenerationById(@PathVariable("id") Integer id);
 
     @GetMapping("/generation/{name}")
-    PokeApiGenerationApi getGenerationByName(@PathVariable("name") String name);
+    PokeApiGeneration getGenerationByName(@PathVariable("name") String name);
+
+    @GetMapping("/pokedex")
+    PokeApiNamedResourceList getPokedex();
+
+    @GetMapping("/pokedex/{id}")
+    PokeApiPokedex getPokedexById(@PathVariable("id") Integer id);
+
+    @GetMapping("/pokedex/{name}")
+    PokeApiPokedex getPokedexByName(@PathVariable("name") String name);
 }
