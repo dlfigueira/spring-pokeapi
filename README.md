@@ -1,2 +1,3 @@
-# spring-pokeapi
-Spring library for the PokéAPI project
+# Instructions
+@SpringBootApplication(scanBasePackages = {"pt.figtreestudios.springpokeapi.service"})
+@EnableFeignClients(basePackages = {"pt.figtreestudios.springpokeapi.proxy"})
