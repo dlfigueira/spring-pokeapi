@@ -36,4 +36,13 @@ public interface PokeApiPokemon {
 
     @GetMapping("/egg-group/{name}")
     PokeApiEggGroup getEggGroupByName(@PathVariable("name") String name);
+
+    @GetMapping("/egg-group")
+    PokeApiNamedResourceList getGenders();
+
+    @GetMapping("/egg-group/{id}")
+    PokeApiEggGroup getGenderById(@PathVariable("id") Integer id);
+
+    @GetMapping("/egg-group/{name}")
+    PokeApiEggGroup getGenderByName(@PathVariable("name") String name);
 }
