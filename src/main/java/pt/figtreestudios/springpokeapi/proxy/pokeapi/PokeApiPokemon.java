@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiAbility;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiCharacteristic;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiEggGroup;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGeneration;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokedex;
@@ -26,4 +27,13 @@ public interface PokeApiPokemon {
 
     @GetMapping("/characteristic/{id}")
     PokeApiCharacteristic getCharacteristicById(@PathVariable("id") Integer id);
+
+    @GetMapping("/egg-group")
+    PokeApiNamedResourceList getEggGroups();
+
+    @GetMapping("/egg-group/{id}")
+    PokeApiEggGroup getEggGroupById(@PathVariable("id") Integer id);
+
+    @GetMapping("/egg-group/{name}")
+    PokeApiEggGroup getEggGroupByName(@PathVariable("name") String name);
 }
