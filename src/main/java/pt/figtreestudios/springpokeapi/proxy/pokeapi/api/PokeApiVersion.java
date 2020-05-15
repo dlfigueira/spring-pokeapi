@@ -9,5 +9,5 @@ public class PokeApiVersion {
     private Integer id;
     private String name;
     private List<PokeApiName> names;
-    private List<PokeApiNamedResource> version_group;
+    private PokeApiNamedResource version_group;
 }
