@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiAbility;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiCharacteristic;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGeneration;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokedex;
@@ -22,4 +23,7 @@ public interface PokeApiPokemon {
 
     @GetMapping("/ability/{name}")
     PokeApiAbility getAbilityByName(@PathVariable("name") String name);
+
+    @GetMapping("/characteristic/{id}")
+    PokeApiCharacteristic getCharacteristicById(@PathVariable("id") Integer id);
 }
