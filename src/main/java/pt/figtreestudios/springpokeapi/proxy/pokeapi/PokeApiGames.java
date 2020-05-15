@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGeneration;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokedex;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersion;
 
-@FeignClient(name = "pokeapi-games", url = "https://pokeapi.co/api/v2/" +
-        "")
+@FeignClient(name = "pokeapi-games", url = "https://pokeapi.co/api/v2/")
 @RequestMapping
 public interface PokeApiGames {
     @GetMapping("/generation")
@@ -29,4 +29,13 @@ public interface PokeApiGames {
 
     @GetMapping("/pokedex/{name}")
     PokeApiPokedex getPokedexByName(@PathVariable("name") String name);
+
+    @GetMapping("/version")
+    PokeApiNamedResourceList getVersions();
+
+    @GetMapping("/version/{id}")
+    PokeApiVersion getVersionById(@PathVariable("id") Integer id);
+
+    @GetMapping("/version/{name}")
+    PokeApiVersion getVersionByName(@PathVariable("name") String name);
 }

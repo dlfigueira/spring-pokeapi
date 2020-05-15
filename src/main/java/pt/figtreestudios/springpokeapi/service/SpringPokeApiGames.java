@@ -3,6 +3,7 @@ package pt.figtreestudios.springpokeapi.service;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGeneration;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokedex;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersion;
 
 public interface SpringPokeApiGames {
     PokeApiNamedResourceList getGenerations();
@@ -12,4 +13,8 @@ public interface SpringPokeApiGames {
     PokeApiNamedResourceList getPokedex();
     PokeApiPokedex getPokedexById(Integer id);
     PokeApiPokedex getPokedexByName(String name);
+
+    PokeApiNamedResourceList getVersions();
+    PokeApiVersion getVersionById(Integer id);
+    PokeApiVersion getVersionByName(String name);
 }

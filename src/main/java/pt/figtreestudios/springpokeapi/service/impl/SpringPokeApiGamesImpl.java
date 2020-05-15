@@ -7,6 +7,7 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.PokeApiGames;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGeneration;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokedex;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersion;
 import pt.figtreestudios.springpokeapi.service.SpringPokeApiGames;
 
 @Slf4j
@@ -43,5 +44,20 @@ public class SpringPokeApiGamesImpl implements SpringPokeApiGames {
     @Override
     public PokeApiPokedex getPokedexByName(String name) {
         return pokeApiGames.getPokedexByName(name);
+    }
+
+    @Override
+    public PokeApiNamedResourceList getVersions() {
+        return pokeApiGames.getVersions();
+    }
+
+    @Override
+    public PokeApiVersion getVersionById(Integer id) {
+        return pokeApiGames.getVersionById(id);
+    }
+
+    @Override
+    public PokeApiVersion getVersionByName(String name) {
+        return pokeApiGames.getVersionByName(name);
     }
 }
