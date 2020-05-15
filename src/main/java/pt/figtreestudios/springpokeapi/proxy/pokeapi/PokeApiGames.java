@@ -8,6 +8,7 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGeneration;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokedex;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersion;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersionGroup;
 
 @FeignClient(name = "pokeapi-games", url = "https://pokeapi.co/api/v2/")
 @RequestMapping
@@ -38,4 +39,13 @@ public interface PokeApiGames {
 
     @GetMapping("/version/{name}")
     PokeApiVersion getVersionByName(@PathVariable("name") String name);
+
+    @GetMapping("/version-group")
+    PokeApiNamedResourceList getVersionGroups();
+
+    @GetMapping("/version-group/{id}")
+    PokeApiVersionGroup getVersionGroupById(@PathVariable("id") Integer id);
+
+    @GetMapping("/version-group/{name}")
+    PokeApiVersionGroup getVersionGroupByName(@PathVariable("name") String name);
 }
