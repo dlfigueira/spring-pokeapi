@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiAbility;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiCharacteristic;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiEggGroup;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGender;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGeneration;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGrowthRate;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokedex;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersion;
@@ -37,12 +39,21 @@ public interface PokeApiPokemon {
     @GetMapping("/egg-group/{name}")
     PokeApiEggGroup getEggGroupByName(@PathVariable("name") String name);
 
-    @GetMapping("/egg-group")
+    @GetMapping("/gender")
     PokeApiNamedResourceList getGenders();
 
-    @GetMapping("/egg-group/{id}")
-    PokeApiEggGroup getGenderById(@PathVariable("id") Integer id);
+    @GetMapping("/gender/{id}")
+    PokeApiGender getGenderById(@PathVariable("id") Integer id);
 
-    @GetMapping("/egg-group/{name}")
-    PokeApiEggGroup getGenderByName(@PathVariable("name") String name);
+    @GetMapping("/gender/{name}")
+    PokeApiGender getGenderByName(@PathVariable("name") String name);
+
+    @GetMapping("/growth-rate")
+    PokeApiNamedResourceList getGrowthRates();
+
+    @GetMapping("/growth-rate/{id}")
+    PokeApiGrowthRate getGrowthRateById(@PathVariable("id") Integer id);
+
+    @GetMapping("/growth-rate/{name}")
+    PokeApiGrowthRate getGrowthRateByName(@PathVariable("name") String name);
 }
