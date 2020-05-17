@@ -12,6 +12,7 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGeneration;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGrowthRate;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNature;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokeathlonStat;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokedex;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersion;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersionGroup;
@@ -66,4 +67,13 @@ public interface PokeApiPokemon {
 
     @GetMapping("/nature/{name}")
     PokeApiNature getNatureByName(@PathVariable("name") String name);
+
+    @GetMapping("/pokeathlon-stat")
+    PokeApiNamedResourceList getPokeathlonStats();
+
+    @GetMapping("/pokeathlon-stat/{id}")
+    PokeApiPokeathlonStat getPokeathlonStatById(@PathVariable("id") Integer id);
+
+    @GetMapping("/pokeathlon-stat/{name}")
+    PokeApiPokeathlonStat getPokeathlonStatByName(@PathVariable("name") String name);
 }
