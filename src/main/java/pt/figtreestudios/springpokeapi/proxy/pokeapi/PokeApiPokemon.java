@@ -76,4 +76,13 @@ public interface PokeApiPokemon {
 
     @GetMapping("/pokeathlon-stat/{name}")
     PokeApiPokeathlonStat getPokeathlonStatByName(@PathVariable("name") String name);
+
+    @GetMapping("/pokemon")
+    PokeApiNamedResourceList getPokemons();
+
+    @GetMapping("/pokemon/{id}")
+    PokeApiPokedex getPokemonStatById(@PathVariable("id") Integer id);
+
+    @GetMapping("/pokemon/{name}")
+    PokeApiPokedex getPokemonStatByName(@PathVariable("name") String name);
 }
