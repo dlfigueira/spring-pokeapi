@@ -14,6 +14,7 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceLis
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNature;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokeathlonStat;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokedex;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokemonColor;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersion;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersionGroup;
 
@@ -81,8 +82,17 @@ public interface PokeApiPokemon {
     PokeApiNamedResourceList getPokemons();
 
     @GetMapping("/pokemon/{id}")
-    PokeApiPokedex getPokemonStatById(@PathVariable("id") Integer id);
+    PokeApiPokedex getPokemonById(@PathVariable("id") Integer id);
 
     @GetMapping("/pokemon/{name}")
-    PokeApiPokedex getPokemonStatByName(@PathVariable("name") String name);
+    PokeApiPokedex getPokemonByName(@PathVariable("name") String name);
+
+    @GetMapping("/pokemon-color")
+    PokeApiNamedResourceList getPokemonColors();
+
+    @GetMapping("/pokemon-color/{id}")
+    PokeApiPokemonColor getPokemonColorById(@PathVariable("id") Integer id);
+
+    @GetMapping("/pokemon-color/{name}")
+    PokeApiPokemonColor getPokemonColorByName(@PathVariable("name") String name);
 }
