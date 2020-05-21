@@ -8,15 +8,15 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiAbility;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiCharacteristic;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiEggGroup;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGender;
-import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGeneration;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGrowthRate;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNature;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokeathlonStat;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokedex;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokemonColor;
-import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersion;
-import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersionGroup;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokemonForm;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokemonHabitat;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokemonShape;
 
 @FeignClient(name = "pokeapi-games", url = "https://pokeapi.co/api/v2/")
 @RequestMapping
@@ -95,4 +95,31 @@ public interface PokeApiPokemon {
 
     @GetMapping("/pokemon-color/{name}")
     PokeApiPokemonColor getPokemonColorByName(@PathVariable("name") String name);
+
+    @GetMapping("/pokemon-form")
+    PokeApiNamedResourceList getPokemonForms();
+
+    @GetMapping("/pokemon-form/{id}")
+    PokeApiPokemonForm getPokemonFormById(@PathVariable("id") Integer id);
+
+    @GetMapping("/pokemon-form/{name}")
+    PokeApiPokemonForm getPokemonFormByName(@PathVariable("name") String name);
+
+    @GetMapping("/pokemon-habitat")
+    PokeApiNamedResourceList getPokemonHabitats();
+
+    @GetMapping("/pokemon-habitat/{id}")
+    PokeApiPokemonHabitat getPokemonHabitatById(@PathVariable("id") Integer id);
+
+    @GetMapping("/pokemon-habitat/{name}")
+    PokeApiPokemonHabitat getPokemonHabitatByName(@PathVariable("name") String name);
+
+    @GetMapping("/pokemon-shape")
+    PokeApiNamedResourceList getPokemonShapes();
+
+    @GetMapping("/pokemon-shape/{id}")
+    PokeApiPokemonShape getPokemonShapeById(@PathVariable("id") Integer id);
+
+    @GetMapping("/pokemon-shape/{name}")
+    PokeApiPokemonShape getPokemonShapeByName(@PathVariable("name") String name);
 }
