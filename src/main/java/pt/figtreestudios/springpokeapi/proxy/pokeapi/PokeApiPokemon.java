@@ -17,6 +17,9 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokemonColor;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokemonForm;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokemonHabitat;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokemonShape;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokemonSpecies;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiStat;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiType;
 
 @FeignClient(name = "pokeapi-games", url = "https://pokeapi.co/api/v2/")
 @RequestMapping
@@ -122,4 +125,31 @@ public interface PokeApiPokemon {
 
     @GetMapping("/pokemon-shape/{name}")
     PokeApiPokemonShape getPokemonShapeByName(@PathVariable("name") String name);
+
+    @GetMapping("/pokemon-species")
+    PokeApiNamedResourceList getPokemonSpecies();
+
+    @GetMapping("/pokemon-species/{id}")
+    PokeApiPokemonSpecies getPokemonSpeciesById(@PathVariable("id") Integer id);
+
+    @GetMapping("/pokemon-species/{name}")
+    PokeApiPokemonSpecies getPokemonSpeciesByName(@PathVariable("name") String name);
+
+    @GetMapping("/stat")
+    PokeApiNamedResourceList getStats();
+
+    @GetMapping("/stat/{id}")
+    PokeApiStat getStatById(@PathVariable("id") Integer id);
+
+    @GetMapping("/stat/{name}")
+    PokeApiStat getStatByName(@PathVariable("name") String name);
+
+    @GetMapping("/type")
+    PokeApiNamedResourceList getTypes();
+
+    @GetMapping("/type/{id}")
+    PokeApiType getTypeById(@PathVariable("id") Integer id);
+
+    @GetMapping("/type/{name}")
+    PokeApiType getTypeByName(@PathVariable("name") String name);
 }
