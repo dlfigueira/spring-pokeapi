@@ -6,5 +6,5 @@ import lombok.Data;
 public class PokeApiMoveBattleStylePreference {
     private Integer low_hp_preference;
     private Integer high_hp_preference;
-    private PokeApiNamedResource move_battle_style;
+    private PokeApiNamedApiResource move_battle_style;
 }

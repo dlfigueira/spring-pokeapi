@@ -6,6 +6,6 @@ import java.util.List;
 
 @Data
 public class PokeApiPokemonHeldItem {
-    private PokeApiNamedResource item;
+    private PokeApiNamedApiResource item;
     private List<PokeApiPokemonHeldItemVersion> version_details;
 }

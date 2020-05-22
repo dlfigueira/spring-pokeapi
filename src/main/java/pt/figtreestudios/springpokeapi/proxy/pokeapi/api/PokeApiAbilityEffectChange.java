@@ -7,5 +7,5 @@ import java.util.List;
 @Data
 public class PokeApiAbilityEffectChange {
     private List<PokeApiEffect> effect_entries;
-    private PokeApiNamedResource version_group;
+    private PokeApiNamedApiResource version_group;
 }

@@ -8,7 +8,7 @@ import java.util.List;
 public class PokeApiVersionEncounter {
     private Integer min_level;
     private Integer max_level;
-    private List<PokeApiNamedResource> condition_values;
+    private List<PokeApiNamedApiResource> condition_values;
     private Integer chance;
-    private PokeApiNamedResource method;
+    private PokeApiNamedApiResource method;
 }

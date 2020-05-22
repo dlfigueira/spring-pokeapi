@@ -9,5 +9,5 @@ public class PokeApiNamedResourceList {
     private Integer count;
     private String next;
     private String previous;
-    private List<PokeApiNamedResource> results;
+    private List<PokeApiNamedApiResource> results;
 }

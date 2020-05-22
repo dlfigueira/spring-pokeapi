@@ -12,6 +12,6 @@ public class PokeApiPokedex {
     private List<PokeApiDescription> descriptions;
     private List<PokeApiName> names;
     private List<PokeApiPokemonEntry> pokemon_entries;
-    private PokeApiNamedResource region;
-    private List<PokeApiNamedResource> version_groups;
+    private PokeApiNamedApiResource region;
+    private List<PokeApiNamedApiResource> version_groups;
 }

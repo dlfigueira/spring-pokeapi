@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class PokeApiMachine {
     private Integer id;
-    private PokeApiNamedResource item;
-    private PokeApiNamedResource move;
-    private PokeApiNamedResource version_group;
+    private PokeApiNamedApiResource item;
+    private PokeApiNamedApiResource move;
+    private PokeApiNamedApiResource version_group;
 }

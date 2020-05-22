@@ -10,9 +10,9 @@ public class PokeApiType {
     private String name;
     private PokeApiTypeRelations damage_relations;
     private List<PokeApiGenerationGameIndex> game_indices;
-    private PokeApiNamedResource generation;
-    private PokeApiNamedResource move_damage_class;
+    private PokeApiNamedApiResource generation;
+    private PokeApiNamedApiResource move_damage_class;
     private List<PokeApiName> names;
     private List<PokeApiTypePokemon> pokemon;
-    private List<PokeApiNamedResource> moves;
+    private List<PokeApiNamedApiResource> moves;
 }

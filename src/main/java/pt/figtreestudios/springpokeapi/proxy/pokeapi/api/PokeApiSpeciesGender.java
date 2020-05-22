@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class PokeApiSpeciesGender {
     private Integer rate;
-    private PokeApiNamedResource pokemon_species;
+    private PokeApiNamedApiResource pokemon_species;
 }

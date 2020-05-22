@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class PokeApiPokemonType {
     private Integer slot;
-    private PokeApiNamedResource type;
+    private PokeApiNamedApiResource type;
 }

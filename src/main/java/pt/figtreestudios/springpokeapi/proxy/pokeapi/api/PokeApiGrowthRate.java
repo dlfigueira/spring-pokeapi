@@ -11,5 +11,5 @@ public class PokeApiGrowthRate {
     private String formula;
     private List<PokeApiDescription> descriptions;
     private List<PokeApiGrowthRateExperienceLevel> levels;
-    private List<PokeApiNamedResource> pokemon_species;
+    private List<PokeApiNamedApiResource> pokemon_species;
 }

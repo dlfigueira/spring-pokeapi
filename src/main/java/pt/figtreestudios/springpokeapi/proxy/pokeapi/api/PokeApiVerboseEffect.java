@@ -6,5 +6,5 @@ import lombok.Data;
 public class PokeApiVerboseEffect {
     private String name;
     private String short_effect;
-    private PokeApiNamedResource language;
+    private PokeApiNamedApiResource language;
 }

@@ -9,5 +9,5 @@ public class PokeApiEggGroup {
     private Integer id;
     private String name;
     private List<PokeApiName> names;
-    private List<PokeApiNamedResource> pokemon_species;
+    private List<PokeApiNamedApiResource> pokemon_species;
 }

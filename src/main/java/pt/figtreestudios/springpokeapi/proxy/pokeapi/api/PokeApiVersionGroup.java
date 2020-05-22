@@ -9,9 +9,9 @@ public class PokeApiVersionGroup {
     private Integer id;
     private String name;
     private Integer order;
-    private PokeApiNamedResource generation;
-    private List<PokeApiNamedResource> move_learn_methods;
-    private List<PokeApiNamedResource> pokedexes;
-    private List<PokeApiNamedResource> regions;
-    private List<PokeApiNamedResource> versions;
+    private PokeApiNamedApiResource generation;
+    private List<PokeApiNamedApiResource> move_learn_methods;
+    private List<PokeApiNamedApiResource> pokedexes;
+    private List<PokeApiNamedApiResource> regions;
+    private List<PokeApiNamedApiResource> versions;
 }

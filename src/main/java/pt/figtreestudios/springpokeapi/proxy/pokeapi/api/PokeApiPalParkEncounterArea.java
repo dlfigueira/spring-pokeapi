@@ -6,5 +6,5 @@ import lombok.Data;
 public class PokeApiPalParkEncounterArea {
     private Integer base_score;
     private Integer rate;
-    private PokeApiNamedResource area;
+    private PokeApiNamedApiResource area;
 }

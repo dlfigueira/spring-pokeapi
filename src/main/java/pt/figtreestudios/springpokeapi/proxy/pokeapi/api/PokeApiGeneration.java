@@ -8,11 +8,11 @@ import java.util.List;
 public class PokeApiGeneration {
     private Integer id;
     private String name;
-    private List<PokeApiNamedResource> abilities;
+    private List<PokeApiNamedApiResource> abilities;
     private List<PokeApiName> names;
-    private PokeApiNamedResource main_region;
-    private List<PokeApiNamedResource> moves;
-    private List<PokeApiNamedResource> pokemon_species;
-    private List<PokeApiNamedResource> types;
-    private List<PokeApiNamedResource> version_groups;
+    private PokeApiNamedApiResource main_region;
+    private List<PokeApiNamedApiResource> moves;
+    private List<PokeApiNamedApiResource> pokemon_species;
+    private List<PokeApiNamedApiResource> types;
+    private List<PokeApiNamedApiResource> version_groups;
 }

@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class PokeApiPokemonSpeciesVariety {
     private String is_default;
-    private PokeApiNamedResource pokemon;
+    private PokeApiNamedApiResource pokemon;
 }

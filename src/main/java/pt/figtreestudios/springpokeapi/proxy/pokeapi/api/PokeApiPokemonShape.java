@@ -10,5 +10,5 @@ public class PokeApiPokemonShape {
     private String name;
     private List<PokeApiAwesomeName> awesome_names;
     private List<PokeApiName> names;
-    private List<PokeApiNamedResource> pokemon_species;
+    private List<PokeApiNamedApiResource> pokemon_species;
 }

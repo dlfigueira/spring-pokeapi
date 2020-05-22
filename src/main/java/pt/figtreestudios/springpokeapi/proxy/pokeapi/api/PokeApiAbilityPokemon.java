@@ -6,5 +6,5 @@ import lombok.Data;
 public class PokeApiAbilityPokemon {
     private boolean is_hidden;
     private Integer slot;
-    private PokeApiNamedResource pokemon;
+    private PokeApiNamedApiResource pokemon;
 }

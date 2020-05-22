@@ -5,9 +5,10 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class PokeApiPokemonColor {
+public class PokeApiBerryFlavor {
     private Integer id;
     private String name;
+    private List<PokeApiFlavorBerryMap> berries;
+    private PokeApiNamedApiResource contest_type;
     private List<PokeApiName> names;
-    private List<PokeApiNamedApiResource> pokemon_species;
 }

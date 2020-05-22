@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class PokeApiName {
     private String name;
-    private PokeApiNamedResource language;
+    private PokeApiNamedApiResource language;
 }

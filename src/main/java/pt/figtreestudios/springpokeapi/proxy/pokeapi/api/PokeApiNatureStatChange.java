@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class PokeApiNatureStatChange {
     private Integer max_change;
-    private PokeApiNamedResource pokeathlon_stat;
+    private PokeApiNamedApiResource pokeathlon_stat;
 }

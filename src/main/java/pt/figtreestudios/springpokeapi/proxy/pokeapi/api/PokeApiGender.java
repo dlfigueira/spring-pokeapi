@@ -9,5 +9,5 @@ public class PokeApiGender {
     private Integer id;
     private String name;
     private List<PokeApiSpeciesGender> pokemon_species_details;
-    private List<PokeApiNamedResource> required_for_evolution;
+    private List<PokeApiNamedApiResource> required_for_evolution;
 }

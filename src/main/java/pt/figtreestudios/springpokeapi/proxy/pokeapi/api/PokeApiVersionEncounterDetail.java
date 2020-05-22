@@ -6,7 +6,7 @@ import java.util.List;
 
 @Data
 public class PokeApiVersionEncounterDetail {
-    private PokeApiNamedResource version;
+    private PokeApiNamedApiResource version;
     private Integer max_chance;
     private List<PokeApiVersionEncounter> encounter_details;
 }

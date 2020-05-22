@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class PokeApiNatureStatAffectSets {
-    private PokeApiNamedResource increase;
-    private PokeApiNamedResource decrease;
+    private PokeApiNamedApiResource increase;
+    private PokeApiNamedApiResource decrease;
 }

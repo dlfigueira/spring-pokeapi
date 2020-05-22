@@ -13,6 +13,6 @@ public class PokeApiStat {
     private PokeApiMoveStatAffectSets affecting_moves;
     private PokeApiNatureStatAffectSets affecting_natures;
     private List<PokeApiApiResource> characteristics;
-    private PokeApiNamedResource move_damage_class;
+    private PokeApiNamedApiResource move_damage_class;
     private List<PokeApiName> names;
 }

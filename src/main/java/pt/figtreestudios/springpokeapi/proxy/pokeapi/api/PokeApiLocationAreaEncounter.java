@@ -6,6 +6,6 @@ import java.util.List;
 
 @Data
 public class PokeApiLocationAreaEncounter {
-    private PokeApiNamedResource location_area;
+    private PokeApiNamedApiResource location_area;
     private List<PokeApiVersionEncounterDetail> version_details;
 }

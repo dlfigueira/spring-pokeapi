@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class PokeApiFlavorText {
     private String flavor_text;
-    private PokeApiNamedResource language;
-    private PokeApiNamedResource version;
+    private PokeApiNamedApiResource language;
+    private PokeApiNamedApiResource version;
 }

@@ -14,9 +14,9 @@ public class PokeApiPokemonForm {
     private boolean is_battle_only;
     private boolean is_mega;
     private String form_name;
-    private PokeApiNamedResource pokemon;
+    private PokeApiNamedApiResource pokemon;
     private PokeApiPokemonFormSprites sprites;
-    private PokeApiNamedResource version_group;
+    private PokeApiNamedApiResource version_group;
     private List<PokeApiName> names;
     private List<PokeApiName> form_names;
 }

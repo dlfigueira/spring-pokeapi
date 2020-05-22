@@ -8,10 +8,10 @@ import java.util.List;
 public class PokeApiNature {
     private Integer id;
     private String name;
-    private PokeApiNamedResource decreased_stat;
-    private PokeApiNamedResource increased_stat;
-    private PokeApiNamedResource hates_flavor;
-    private PokeApiNamedResource likes_flavor;
+    private PokeApiNamedApiResource decreased_stat;
+    private PokeApiNamedApiResource increased_stat;
+    private PokeApiNamedApiResource hates_flavor;
+    private PokeApiNamedApiResource likes_flavor;
     private List<PokeApiNatureStatChange> pokeathlon_stat_changes;
     private List<PokeApiMoveBattleStylePreference> move_battle_style_preferences;
     private List<PokeApiName> names;

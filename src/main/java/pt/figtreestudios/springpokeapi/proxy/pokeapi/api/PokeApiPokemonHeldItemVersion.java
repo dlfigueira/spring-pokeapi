@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class PokeApiPokemonHeldItemVersion {
-    private PokeApiNamedResource version;
+    private PokeApiNamedApiResource version;
     private Integer rarity;
 }

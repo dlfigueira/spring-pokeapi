@@ -6,6 +6,6 @@ import java.util.List;
 
 @Data
 public class PokeApiPokemonMove {
-    private PokeApiNamedResource move;
+    private PokeApiNamedApiResource move;
     private List<PokeApiPokemonMoveVersion> version_group_details;
 }

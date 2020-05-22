@@ -14,13 +14,13 @@ public class PokeApiPokemon {
     private Integer order;
     private Integer weight;
     private List<PokeApiPokemonAbility> abilities;
-    private List<PokeApiNamedResource> forms;
+    private List<PokeApiNamedApiResource> forms;
     private List<PokeApiVersionGameIndex> game_indices;
     private List<PokeApiPokemonHeldItem> held_items;
     private List<PokeApiLocationAreaEncounter> location_area_encounters;
     private List<PokeApiPokemonMove> moves;
     private List<PokeApiPokemonSprites> sprites;
-    private List<PokeApiNamedResource> species;
+    private List<PokeApiNamedApiResource> species;
     private List<PokeApiPokemonStat> stats;
     private List<PokeApiPokemonType> types;
 }

@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class PokeApiMoveStatAffect {
     private Integer change;
-    private PokeApiNamedResource move;
+    private PokeApiNamedApiResource move;
 }
