@@ -10,7 +10,7 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiBerryFlavor;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiMachine;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 
-@FeignClient(name = "pokeapi-games", url = "https://pokeapi.co/api/v2/")
+@FeignClient(name = "pokeapi-berries", url = "https://pokeapi.co/api/v2/")
 @RequestMapping
 public interface PokeApiBerries {
     @GetMapping("/berry")

@@ -21,7 +21,7 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokemonSpecies;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiStat;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiType;
 
-@FeignClient(name = "pokeapi-games", url = "https://pokeapi.co/api/v2/")
+@FeignClient(name = "pokeapi-pokemon", url = "https://pokeapi.co/api/v2/")
 @RequestMapping
 public interface PokeApiPokemon {
     @GetMapping("/ability")

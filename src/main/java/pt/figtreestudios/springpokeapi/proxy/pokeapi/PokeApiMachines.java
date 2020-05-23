@@ -11,7 +11,7 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokedex;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersion;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersionGroup;
 
-@FeignClient(name = "pokeapi-games", url = "https://pokeapi.co/api/v2/")
+@FeignClient(name = "pokeapi-machines", url = "https://pokeapi.co/api/v2/")
 @RequestMapping
 public interface PokeApiMachines {
     @GetMapping("/machine")
