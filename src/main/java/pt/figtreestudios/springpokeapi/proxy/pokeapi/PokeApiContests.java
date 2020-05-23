@@ -30,15 +30,9 @@ public interface PokeApiContests {
     @GetMapping("/contest-effect/{id}")
     PokeApiContestEffect getContestEffectById(@PathVariable("id") Integer id);
 
-    @GetMapping("/contest-effect/{name}")
-    PokeApiContestEffect getContestEffectByName(@PathVariable("name") String name);
-
     @GetMapping("/super-contest-effect")
     PokeApiNamedResourceList getSuperContestEffects();
 
     @GetMapping("/super-contest-effect/{id}")
     PokeApiSuperContestEffect getSuperContestEffectById(@PathVariable("id") Integer id);
-
-    @GetMapping("/super-contest-effect/{name}")
-    PokeApiSuperContestEffect getSuperContestEffectByName(@PathVariable("name") String name);
 }
