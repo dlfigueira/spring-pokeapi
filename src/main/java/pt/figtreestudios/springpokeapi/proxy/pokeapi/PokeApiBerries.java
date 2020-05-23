@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiBerry;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiBerryFirmness;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiBerryFlavor;
-import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiMachine;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 
 @FeignClient(name = "pokeapi-berries", url = "https://pokeapi.co/api/v2/")

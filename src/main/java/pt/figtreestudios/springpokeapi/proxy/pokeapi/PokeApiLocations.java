@@ -4,14 +4,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiContestEffect;
-import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiContestType;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiLocation;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiLocationArea;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPalParkArea;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiRegion;
-import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiSuperContestEffect;
 
 @FeignClient(name = "pokeapi-locations", url = "https://pokeapi.co/api/v2/")
 @RequestMapping
