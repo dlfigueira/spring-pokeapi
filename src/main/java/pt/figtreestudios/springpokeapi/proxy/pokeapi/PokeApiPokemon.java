@@ -33,6 +33,9 @@ public interface PokeApiPokemon {
     @GetMapping("/ability/{name}")
     PokeApiAbility getAbilityByName(@PathVariable("name") String name);
 
+    @GetMapping("/characteristic")
+    PokeApiNamedResourceList getCharacteristics();
+
     @GetMapping("/characteristic/{id}")
     PokeApiCharacteristic getCharacteristicById(@PathVariable("id") Integer id);
 

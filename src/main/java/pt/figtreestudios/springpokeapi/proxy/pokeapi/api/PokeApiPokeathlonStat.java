@@ -9,5 +9,5 @@ public class PokeApiPokeathlonStat {
     private Integer id;
     private String name;
     private List<PokeApiName> names;
-    private List<PokeApiNaturePokeathlonStatAffectSets> affecting_natures;
+    private PokeApiNaturePokeathlonStatAffectSets affecting_natures;
 }

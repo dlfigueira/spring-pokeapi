@@ -50,7 +50,7 @@ public interface PokeApiItems {
     @GetMapping("/item-fling-effect/{name}")
     PokeApiItemFlingEffect getItemFlingEffectByName(@PathVariable("name") String name);
 
-    @GetMapping("/item-fling-effect")
+    @GetMapping("/item-pocket")
     PokeApiNamedResourceList getItemPockets();
 
     @GetMapping("/item-pocket/{id}")

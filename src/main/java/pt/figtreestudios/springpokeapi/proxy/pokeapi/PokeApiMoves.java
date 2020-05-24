@@ -70,7 +70,7 @@ public interface PokeApiMoves {
     @GetMapping("/move-learn-method/{name}")
     PokeApiMoveLearnMethod getMoveLearnMethodByName(@PathVariable("name") String name);
 
-    @GetMapping("/move-learn-method")
+    @GetMapping("/move-target")
     PokeApiNamedResourceList getMoveTargets();
 
     @GetMapping("/move-target/{id}")
