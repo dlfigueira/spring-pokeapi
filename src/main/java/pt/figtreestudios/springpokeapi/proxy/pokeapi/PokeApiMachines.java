@@ -1,5 +1,6 @@
 package pt.figtreestudios.springpokeapi.proxy.pokeapi;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,8 +15,10 @@ public interface PokeApiMachines {
     PokeApiNamedResourceList getMachines();
 
     @GetMapping("/machine/{id}")
-    PokeApiMachine getMachineById(@PathVariable("id") Integer id);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiMachine getMachineById(@PathVariable Integer id);
 
     @GetMapping("/machine/{name}")
-    PokeApiMachine getMachineByName(@PathVariable("name") String name);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiMachine getMachineByName(@PathVariable String name);
 }

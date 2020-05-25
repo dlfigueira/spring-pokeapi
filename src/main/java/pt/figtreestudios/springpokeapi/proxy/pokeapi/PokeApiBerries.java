@@ -1,5 +1,6 @@
 package pt.figtreestudios.springpokeapi.proxy.pokeapi;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,26 +17,32 @@ public interface PokeApiBerries {
     PokeApiNamedResourceList getBerries();
 
     @GetMapping("/berry/{id}")
-    PokeApiBerry getBerryById(@PathVariable("id") Integer id);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiBerry getBerryById(@PathVariable Integer id);
 
     @GetMapping("/berry/{name}")
-    PokeApiBerry getBerryByName(@PathVariable("name") String name);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiBerry getBerryByName(@PathVariable String name);
 
     @GetMapping("/berry")
     PokeApiNamedResourceList getBerryFirmnesses();
 
     @GetMapping("/berry/{id}")
-    PokeApiBerryFirmness getBerryFirmnessById(@PathVariable("id") Integer id);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiBerryFirmness getBerryFirmnessById(@PathVariable Integer id);
 
     @GetMapping("/berry/{name}")
-    PokeApiBerryFirmness getBerryFirmnessByName(@PathVariable("name") String name);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiBerryFirmness getBerryFirmnessByName(@PathVariable String name);
 
     @GetMapping("/berry")
     PokeApiNamedResourceList getBerryFlavors();
 
     @GetMapping("/berry/{id}")
-    PokeApiBerryFlavor getBerryFlavorById(@PathVariable("id") Integer id);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiBerryFlavor getBerryFlavorById(@PathVariable Integer id);
 
     @GetMapping("/berry/{name}")
-    PokeApiBerryFlavor getBerryFlavorByName(@PathVariable("name") String name);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiBerryFlavor getBerryFlavorByName(@PathVariable String name);
 }

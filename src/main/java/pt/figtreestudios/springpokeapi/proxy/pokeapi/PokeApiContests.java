@@ -1,5 +1,6 @@
 package pt.figtreestudios.springpokeapi.proxy.pokeapi;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,20 +17,24 @@ public interface PokeApiContests {
     PokeApiNamedResourceList getContestTypes();
 
     @GetMapping("/contest-type/{id}")
-    PokeApiContestType getContestTypeById(@PathVariable("id") Integer id);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiContestType getContestTypeById(@PathVariable Integer id);
 
     @GetMapping("/contest-type/{name}")
-    PokeApiContestType getContestTypeByName(@PathVariable("name") String name);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiContestType getContestTypeByName(@PathVariable String name);
 
     @GetMapping("/contest-effect")
     PokeApiNamedResourceList getContestEffects();
 
     @GetMapping("/contest-effect/{id}")
-    PokeApiContestEffect getContestEffectById(@PathVariable("id") Integer id);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiContestEffect getContestEffectById(@PathVariable Integer id);
 
     @GetMapping("/super-contest-effect")
     PokeApiNamedResourceList getSuperContestEffects();
 
     @GetMapping("/super-contest-effect/{id}")
-    PokeApiSuperContestEffect getSuperContestEffectById(@PathVariable("id") Integer id);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiSuperContestEffect getSuperContestEffectById(@PathVariable Integer id);
 }

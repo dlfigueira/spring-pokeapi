@@ -1,6 +1,8 @@
 package pt.figtreestudios.springpokeapi.proxy.pokeapi.api;
 
-public class PokeApiItemSprites {
+import java.io.Serializable;
+
+public class PokeApiItemSprites implements Serializable {
     private String default_;
 
     public String getDefault() {

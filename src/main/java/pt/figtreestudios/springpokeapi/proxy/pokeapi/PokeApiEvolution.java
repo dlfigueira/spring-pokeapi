@@ -1,5 +1,6 @@
 package pt.figtreestudios.springpokeapi.proxy.pokeapi;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,14 +16,17 @@ public interface PokeApiEvolution {
     PokeApiNamedResourceList getEvolutionChains();
 
     @GetMapping("/evolution-chain/{id}")
-    PokeApiEvolutionChain getEvolutionChainById(@PathVariable("id") Integer id);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiEvolutionChain getEvolutionChainById(@PathVariable Integer id);
 
     @GetMapping("/evolution-trigger")
     PokeApiNamedResourceList getEvolutionTriggers();
 
     @GetMapping("/evolution-trigger/{id}")
-    PokeApiEvolutionTrigger getEvolutionTriggerById(@PathVariable("id") Integer id);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiEvolutionTrigger getEvolutionTriggerById(@PathVariable Integer id);
 
     @GetMapping("/evolution-trigger/{name}")
-    PokeApiEvolutionTrigger getEvolutionTriggerByName(@PathVariable("name") String name);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiEvolutionTrigger getEvolutionTriggerByName(@PathVariable String name);
 }

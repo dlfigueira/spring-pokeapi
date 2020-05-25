@@ -2,8 +2,10 @@ package pt.figtreestudios.springpokeapi.proxy.pokeapi.api;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class PokeApiMoveMetaData {
+public class PokeApiMoveMetaData implements Serializable {
     private PokeApiNamedApiResource ailment;
     private PokeApiNamedApiResource category;
     private Integer min_hits;

@@ -2,8 +2,10 @@ package pt.figtreestudios.springpokeapi.proxy.pokeapi.api;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class PokeApiEvolutionDetail {
+public class PokeApiEvolutionDetail implements Serializable {
     private PokeApiNamedApiResource item;
     private PokeApiNamedApiResource trigger;
     private Integer gender;

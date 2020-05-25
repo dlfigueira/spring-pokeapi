@@ -1,5 +1,6 @@
 package pt.figtreestudios.springpokeapi.proxy.pokeapi;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,26 +17,32 @@ public interface PokeApiEncounters {
     PokeApiNamedResourceList getEncounterMethods();
 
     @GetMapping("/encounter-method/{id}")
-    PokeApiEncounterMethod getEncounterMethodById(@PathVariable("id") Integer id);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiEncounterMethod getEncounterMethodById(@PathVariable Integer id);
 
     @GetMapping("/encounter-method/{name}")
-    PokeApiEncounterMethod getEncounterMethodByName(@PathVariable("name") String name);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiEncounterMethod getEncounterMethodByName(@PathVariable String name);
 
     @GetMapping("/encounter-condition")
     PokeApiNamedResourceList getEncounterConditions();
 
     @GetMapping("/encounter-condition/{id}")
-    PokeApiEncounterCondition getEncounterConditionById(@PathVariable("id") Integer id);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiEncounterCondition getEncounterConditionById(@PathVariable Integer id);
 
     @GetMapping("/encounter-condition/{name}")
-    PokeApiEncounterCondition getEncounterConditionByName(@PathVariable("name") String name);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiEncounterCondition getEncounterConditionByName(@PathVariable String name);
 
     @GetMapping("/encounter-condition-value")
     PokeApiNamedResourceList getEncounterConditionValues();
 
     @GetMapping("/encounter-condition-value/{id}")
-    PokeApiEncounterConditionValue getEncounterConditionValueById(@PathVariable("id") Integer id);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiEncounterConditionValue getEncounterConditionValueById(@PathVariable Integer id);
 
     @GetMapping("/encounter-condition-value/{name}")
-    PokeApiEncounterConditionValue getEncounterConditionValueByName(@PathVariable("name") String name);
+    @Cacheable(value = "cache", key = "#root.methodName+#root.args")
+    PokeApiEncounterConditionValue getEncounterConditionValueByName(@PathVariable String name);
 }

@@ -2,12 +2,11 @@ package pt.figtreestudios;
 
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
+import pt.figtreestudios.springpokeapi.config.SpringPokeApiConfig;
 
 @SpringBootConfiguration
-@ComponentScan("pt.figtreestudios.springpokeapi.service")
-@EnableFeignClients("pt.figtreestudios.springpokeapi.proxy")
 @EnableAutoConfiguration
+@Import(SpringPokeApiConfig.class)
 public class TestConfig {
 }

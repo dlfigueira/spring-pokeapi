@@ -1,10 +1,12 @@
 package pt.figtreestudios.springpokeapi.proxy.pokeapi.api;
 
-public class PokeApiContestComboSets {
+import java.io.Serializable;
+
+public class PokeApiContestComboSets implements Serializable {
     private PokeApiContestComboDetail normal;
     private PokeApiContestComboDetail super_;
 
-    public PokeApiContestComboDetail getNormal() {
+    public PokeApiContestComboDetail getNormal()  {
         return normal;
     }
 
