@@ -5,6 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiBerry;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiBerryFirmness;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiBerryFlavor;
@@ -14,7 +15,8 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceLis
 @RequestMapping
 public interface PokeApiBerries {
     @GetMapping("/berry")
-    PokeApiNamedResourceList getBerries();
+    PokeApiNamedResourceList getBerries(@RequestParam Integer limit,
+                                        @RequestParam Integer offset);
 
     @GetMapping("/berry/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -25,7 +27,8 @@ public interface PokeApiBerries {
     PokeApiBerry getBerryByName(@PathVariable String name);
 
     @GetMapping("/berry")
-    PokeApiNamedResourceList getBerryFirmnesses();
+    PokeApiNamedResourceList getBerryFirmnesses(@RequestParam Integer limit,
+                                                @RequestParam Integer offset);
 
     @GetMapping("/berry/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -36,7 +39,8 @@ public interface PokeApiBerries {
     PokeApiBerryFirmness getBerryFirmnessByName(@PathVariable String name);
 
     @GetMapping("/berry")
-    PokeApiNamedResourceList getBerryFlavors();
+    PokeApiNamedResourceList getBerryFlavors(@RequestParam Integer limit,
+                                             @RequestParam Integer offset);
 
     @GetMapping("/berry/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")

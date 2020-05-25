@@ -5,6 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiGeneration;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiPokedex;
@@ -15,7 +16,8 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiVersionGroup;
 @RequestMapping
 public interface PokeApiGames {
     @GetMapping("/generation")
-    PokeApiNamedResourceList getGenerations();
+    PokeApiNamedResourceList getGenerations(@RequestParam Integer limit,
+                                            @RequestParam Integer offset);
 
     @GetMapping("/generation/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -26,7 +28,8 @@ public interface PokeApiGames {
     PokeApiGeneration getGenerationByName(@PathVariable String name);
 
     @GetMapping("/pokedex")
-    PokeApiNamedResourceList getPokedex();
+    PokeApiNamedResourceList getPokedex(@RequestParam Integer limit,
+                                        @RequestParam Integer offset);
 
     @GetMapping("/pokedex/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -37,7 +40,8 @@ public interface PokeApiGames {
     PokeApiPokedex getPokedexByName(@PathVariable String name);
 
     @GetMapping("/version")
-    PokeApiNamedResourceList getVersions();
+    PokeApiNamedResourceList getVersions(@RequestParam Integer limit,
+                                         @RequestParam Integer offset);
 
     @GetMapping("/version/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -48,7 +52,8 @@ public interface PokeApiGames {
     PokeApiVersion getVersionByName(@PathVariable String name);
 
     @GetMapping("/version-group")
-    PokeApiNamedResourceList getVersionGroups();
+    PokeApiNamedResourceList getVersionGroups(@RequestParam Integer limit,
+                                              @RequestParam Integer offset);
 
     @GetMapping("/version-group/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")

@@ -1,5 +1,6 @@
 package pt.figtreestudios.springpokeapi.proxy.pokeapi;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import pt.figtreestudios.TestConfig;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedApiResource;
+import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
@@ -18,7 +20,17 @@ class PokeApiBerriesTest {
 
     @Test
     public void whenGetBerries_success() {
-        pokeApiBerries.getBerries();
+        pokeApiBerries.getBerries(1, 1);
+    }
+
+    @Test
+    public void givenPagination_whenGetBerries_success() {
+        PokeApiNamedResourceList berriesFirstPage = pokeApiBerries.getBerries(1, 0);
+        PokeApiNamedResourceList berriesSecondPage = pokeApiBerries.getBerries(1, 1);
+
+        Assertions.assertThat(berriesFirstPage.getResults().size()).isEqualTo(1);
+        Assertions.assertThat(berriesSecondPage.getResults().size()).isEqualTo(1);
+        Assertions.assertThat(berriesFirstPage.getResults().get(0)).isNotEqualTo(berriesSecondPage.getResults().get(0));
     }
 
     @Test
@@ -28,7 +40,7 @@ class PokeApiBerriesTest {
 
     @Test
     public void whenGetBerryByName_success() {
-        pokeApiBerries.getBerries().getResults().stream()
+        pokeApiBerries.getBerries(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiBerries::getBerryByName);
@@ -36,7 +48,7 @@ class PokeApiBerriesTest {
 
     @Test
     public void whenGetBerryFirmnesses_success() {
-        pokeApiBerries.getBerryFirmnesses();
+        pokeApiBerries.getBerryFirmnesses(1, 1);
     }
 
     @Test
@@ -46,7 +58,7 @@ class PokeApiBerriesTest {
 
     @Test
     public void whenGetBerryFirmnessByName_success() {
-        pokeApiBerries.getBerryFirmnesses().getResults().stream()
+        pokeApiBerries.getBerryFirmnesses(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiBerries::getBerryFirmnessByName);
@@ -54,7 +66,7 @@ class PokeApiBerriesTest {
 
     @Test
     public void whenGetBerryFlavors_success() {
-        pokeApiBerries.getBerryFlavors();
+        pokeApiBerries.getBerryFlavors(1, 1);
     }
 
     @Test
@@ -64,7 +76,7 @@ class PokeApiBerriesTest {
 
     @Test
     public void whenGetBerryFlavorByName_success() {
-        pokeApiBerries.getBerryFlavors().getResults().stream()
+        pokeApiBerries.getBerryFlavors(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiBerries::getBerryFlavorByName);

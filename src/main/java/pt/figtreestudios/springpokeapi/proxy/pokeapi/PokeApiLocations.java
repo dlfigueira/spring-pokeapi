@@ -5,6 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiLocation;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiLocationArea;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
@@ -15,7 +16,8 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiRegion;
 @RequestMapping
 public interface PokeApiLocations {
     @GetMapping("/location")
-    PokeApiNamedResourceList getLocations();
+    PokeApiNamedResourceList getLocations(@RequestParam Integer limit,
+                                          @RequestParam Integer offset);
 
     @GetMapping("/location/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -26,7 +28,8 @@ public interface PokeApiLocations {
     PokeApiLocation getLocationByName(@PathVariable String name);
 
     @GetMapping("/location-area")
-    PokeApiNamedResourceList getLocationAreas();
+    PokeApiNamedResourceList getLocationAreas(@RequestParam Integer limit,
+                                              @RequestParam Integer offset);
 
     @GetMapping("/location-area/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -37,7 +40,8 @@ public interface PokeApiLocations {
     PokeApiLocationArea getLocationAreaByName(@PathVariable String name);
 
     @GetMapping("/pal-park-area")
-    PokeApiNamedResourceList getPalParkAreas();
+    PokeApiNamedResourceList getPalParkAreas(@RequestParam Integer limit,
+                                             @RequestParam Integer offset);
 
     @GetMapping("/pal-park-area/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -48,7 +52,8 @@ public interface PokeApiLocations {
     PokeApiPalParkArea getPalParkAreaByName(@PathVariable String name);
 
     @GetMapping("/region")
-    PokeApiNamedResourceList getRegions();
+    PokeApiNamedResourceList getRegions(@RequestParam Integer limit,
+                                        @RequestParam Integer offset);
 
     @GetMapping("/region/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")

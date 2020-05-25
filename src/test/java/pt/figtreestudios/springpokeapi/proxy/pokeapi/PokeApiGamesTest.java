@@ -18,7 +18,7 @@ class PokeApiGamesTest {
 
     @Test
     public void whenGetGenerations_success() {
-        pokeApiGames.getGenerations();
+        pokeApiGames.getGenerations(1, 1);
     }
 
     @Test
@@ -28,7 +28,7 @@ class PokeApiGamesTest {
 
     @Test
     public void whenGetGenerationByName_success() {
-        pokeApiGames.getGenerations().getResults().stream()
+        pokeApiGames.getGenerations(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiGames::getGenerationByName);
@@ -36,7 +36,7 @@ class PokeApiGamesTest {
 
     @Test
     public void whenGetPokedex_success() {
-        pokeApiGames.getPokedex();
+        pokeApiGames.getPokedex(1, 1);
     }
 
     @Test
@@ -46,7 +46,7 @@ class PokeApiGamesTest {
 
     @Test
     public void whenGetPokedexByName_success() {
-        pokeApiGames.getPokedex().getResults().stream()
+        pokeApiGames.getPokedex(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiGames::getPokedexByName);
@@ -54,7 +54,7 @@ class PokeApiGamesTest {
 
     @Test
     public void whenGetVersions_success() {
-        pokeApiGames.getVersions();
+        pokeApiGames.getVersions(1, 1);
     }
 
     @Test
@@ -64,7 +64,7 @@ class PokeApiGamesTest {
 
     @Test
     public void whenGetVersionByName_success() {
-        pokeApiGames.getVersions().getResults().stream()
+        pokeApiGames.getVersions(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiGames::getVersionByName);
@@ -72,7 +72,7 @@ class PokeApiGamesTest {
 
     @Test
     public void whenGetVersionGroups_success() {
-        pokeApiGames.getVersionGroups();
+        pokeApiGames.getVersionGroups(1, 1);
     }
 
     @Test
@@ -82,7 +82,7 @@ class PokeApiGamesTest {
 
     @Test
     public void whenGetVersionGroupByName_success() {
-        pokeApiGames.getVersionGroups().getResults().stream()
+        pokeApiGames.getVersionGroups(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiGames::getVersionGroupByName);

@@ -5,6 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiModelName;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiMove;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiMoveAilment;
@@ -18,7 +19,8 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceLis
 @RequestMapping
 public interface PokeApiMoves {
     @GetMapping("/move")
-    PokeApiNamedResourceList getMoves();
+    PokeApiNamedResourceList getMoves(@RequestParam Integer limit,
+                                      @RequestParam Integer offset);
 
     @GetMapping("/move/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -29,7 +31,8 @@ public interface PokeApiMoves {
     PokeApiMove getMoveByName(@PathVariable String name);
 
     @GetMapping("/move-ailment")
-    PokeApiNamedResourceList getMoveAilments();
+    PokeApiNamedResourceList getMoveAilments(@RequestParam Integer limit,
+                                             @RequestParam Integer offset);
 
     @GetMapping("/move-ailment/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -40,7 +43,8 @@ public interface PokeApiMoves {
     PokeApiMoveAilment getMoveAilmentByName(@PathVariable String name);
 
     @GetMapping("/move-battle-style")
-    PokeApiNamedResourceList getMoveBattleStyles();
+    PokeApiNamedResourceList getMoveBattleStyles(@RequestParam Integer limit,
+                                                 @RequestParam Integer offset);
 
     @GetMapping("/move-battle-style/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -51,7 +55,8 @@ public interface PokeApiMoves {
     PokeApiMoveBattleStyle getMoveBattleStyleByName(@PathVariable String name);
 
     @GetMapping("/move-category")
-    PokeApiNamedResourceList getMoveCategories();
+    PokeApiNamedResourceList getMoveCategories(@RequestParam Integer limit,
+                                               @RequestParam Integer offset);
 
     @GetMapping("/move-category/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -62,7 +67,8 @@ public interface PokeApiMoves {
     PokeApiModelName getMoveCategoryByName(@PathVariable String name);
 
     @GetMapping("/move-damage-class")
-    PokeApiNamedResourceList getMoveDamageClasses();
+    PokeApiNamedResourceList getMoveDamageClasses(@RequestParam Integer limit,
+                                                  @RequestParam Integer offset);
 
     @GetMapping("/move-damage-class/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -73,7 +79,8 @@ public interface PokeApiMoves {
     PokeApiMoveDamageClass getMoveDamageClassByName(@PathVariable String name);
 
     @GetMapping("/move-learn-method")
-    PokeApiNamedResourceList getMoveLearnMethods();
+    PokeApiNamedResourceList getMoveLearnMethods(@RequestParam Integer limit,
+                                                 @RequestParam Integer offset);
 
     @GetMapping("/move-learn-method/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -84,7 +91,8 @@ public interface PokeApiMoves {
     PokeApiMoveLearnMethod getMoveLearnMethodByName(@PathVariable String name);
 
     @GetMapping("/move-target")
-    PokeApiNamedResourceList getMoveTargets();
+    PokeApiNamedResourceList getMoveTargets(@RequestParam Integer limit,
+                                            @RequestParam Integer offset);
 
     @GetMapping("/move-target/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")

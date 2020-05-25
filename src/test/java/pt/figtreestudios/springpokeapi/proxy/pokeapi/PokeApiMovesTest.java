@@ -18,7 +18,7 @@ class PokeApiMovesTest {
 
     @Test
     public void whenGetMoves_success() {
-        pokeApiMoves.getMoves();
+        pokeApiMoves.getMoves(1, 1);
     }
 
     @Test
@@ -28,7 +28,7 @@ class PokeApiMovesTest {
 
     @Test
     public void whenGetMoveByName_success() {
-        pokeApiMoves.getMoves().getResults().stream()
+        pokeApiMoves.getMoves(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiMoves::getMoveByName);
@@ -36,7 +36,7 @@ class PokeApiMovesTest {
 
     @Test
     public void whenGetMoveAilments_success() {
-        pokeApiMoves.getMoveAilments();
+        pokeApiMoves.getMoveAilments(1, 1);
     }
 
     @Test
@@ -46,7 +46,7 @@ class PokeApiMovesTest {
 
     @Test
     public void whenGetMoveAilmentByName_success() {
-        pokeApiMoves.getMoveAilments().getResults().stream()
+        pokeApiMoves.getMoveAilments(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiMoves::getMoveAilmentByName);
@@ -54,7 +54,7 @@ class PokeApiMovesTest {
 
     @Test
     public void whenGetMoveBattleStyles_success() {
-        pokeApiMoves.getMoveBattleStyles();
+        pokeApiMoves.getMoveBattleStyles(1, 1);
     }
 
     @Test
@@ -64,7 +64,7 @@ class PokeApiMovesTest {
 
     @Test
     public void whenGetMoveBattleStyleByName_success() {
-        pokeApiMoves.getMoveBattleStyles().getResults().stream()
+        pokeApiMoves.getMoveBattleStyles(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiMoves::getMoveBattleStyleByName);
@@ -72,7 +72,7 @@ class PokeApiMovesTest {
 
     @Test
     public void whenGetMoveCategories_success() {
-        pokeApiMoves.getMoveCategories();
+        pokeApiMoves.getMoveCategories(1, 1);
     }
 
     @Test
@@ -82,7 +82,7 @@ class PokeApiMovesTest {
 
     @Test
     public void whenGetMoveCategoryByName_success() {
-        pokeApiMoves.getMoveCategories().getResults().stream()
+        pokeApiMoves.getMoveCategories(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiMoves::getMoveCategoryByName);
@@ -90,7 +90,7 @@ class PokeApiMovesTest {
 
     @Test
     public void whenGetMoveDamageClasses_success() {
-        pokeApiMoves.getMoveDamageClasses();
+        pokeApiMoves.getMoveDamageClasses(1, 1);
     }
 
     @Test
@@ -100,7 +100,7 @@ class PokeApiMovesTest {
 
     @Test
     public void whenGetMoveDamageClassByName_success() {
-        pokeApiMoves.getMoveDamageClasses().getResults().stream()
+        pokeApiMoves.getMoveDamageClasses(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiMoves::getMoveDamageClassByName);
@@ -108,7 +108,7 @@ class PokeApiMovesTest {
 
     @Test
     public void whenGetMoveLearnMethods_success() {
-        pokeApiMoves.getMoveLearnMethods();
+        pokeApiMoves.getMoveLearnMethods(1, 1);
     }
 
     @Test
@@ -118,7 +118,7 @@ class PokeApiMovesTest {
 
     @Test
     public void whenGetMoveLearnMethodByName_success() {
-        pokeApiMoves.getMoveLearnMethods().getResults().stream()
+        pokeApiMoves.getMoveLearnMethods(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiMoves::getMoveLearnMethodByName);
@@ -126,7 +126,7 @@ class PokeApiMovesTest {
 
     @Test
     public void whenGetMoveTargets_success() {
-        pokeApiMoves.getMoveTargets();
+        pokeApiMoves.getMoveTargets(1, 1);
     }
 
     @Test
@@ -136,7 +136,7 @@ class PokeApiMovesTest {
 
     @Test
     public void whenGetMoveTargetByName_success() {
-        pokeApiMoves.getMoveTargets().getResults().stream()
+        pokeApiMoves.getMoveTargets(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiMoves::getMoveTargetByName);

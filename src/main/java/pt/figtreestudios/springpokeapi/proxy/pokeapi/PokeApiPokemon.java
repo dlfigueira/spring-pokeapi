@@ -5,6 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiAbility;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiCharacteristic;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiEggGroup;
@@ -26,7 +27,8 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiType;
 @RequestMapping
 public interface PokeApiPokemon {
     @GetMapping("/ability")
-    PokeApiNamedResourceList getAbilities();
+    PokeApiNamedResourceList getAbilities(@RequestParam Integer limit,
+                                          @RequestParam Integer offset);
 
     @GetMapping("/ability/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -37,14 +39,16 @@ public interface PokeApiPokemon {
     PokeApiAbility getAbilityByName(@PathVariable String name);
 
     @GetMapping("/characteristic")
-    PokeApiNamedResourceList getCharacteristics();
+    PokeApiNamedResourceList getCharacteristics(@RequestParam Integer limit,
+                                                @RequestParam Integer offset);
 
     @GetMapping("/characteristic/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
     PokeApiCharacteristic getCharacteristicById(@PathVariable Integer id);
 
     @GetMapping("/egg-group")
-    PokeApiNamedResourceList getEggGroups();
+    PokeApiNamedResourceList getEggGroups(@RequestParam Integer limit,
+                                          @RequestParam Integer offset);
 
     @GetMapping("/egg-group/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -55,7 +59,8 @@ public interface PokeApiPokemon {
     PokeApiEggGroup getEggGroupByName(@PathVariable String name);
 
     @GetMapping("/gender")
-    PokeApiNamedResourceList getGenders();
+    PokeApiNamedResourceList getGenders(@RequestParam Integer limit,
+                                        @RequestParam Integer offset);
 
     @GetMapping("/gender/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -66,7 +71,8 @@ public interface PokeApiPokemon {
     PokeApiGender getGenderByName(@PathVariable String name);
 
     @GetMapping("/growth-rate")
-    PokeApiNamedResourceList getGrowthRates();
+    PokeApiNamedResourceList getGrowthRates(@RequestParam Integer limit,
+                                            @RequestParam Integer offset);
 
     @GetMapping("/growth-rate/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -77,7 +83,8 @@ public interface PokeApiPokemon {
     PokeApiGrowthRate getGrowthRateByName(@PathVariable String name);
 
     @GetMapping("/nature")
-    PokeApiNamedResourceList getNatures();
+    PokeApiNamedResourceList getNatures(@RequestParam Integer limit,
+                                        @RequestParam Integer offset);
 
     @GetMapping("/nature/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -88,7 +95,8 @@ public interface PokeApiPokemon {
     PokeApiNature getNatureByName(@PathVariable String name);
 
     @GetMapping("/pokeathlon-stat")
-    PokeApiNamedResourceList getPokeathlonStats();
+    PokeApiNamedResourceList getPokeathlonStats(@RequestParam Integer limit,
+                                                @RequestParam Integer offset);
 
     @GetMapping("/pokeathlon-stat/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -99,7 +107,8 @@ public interface PokeApiPokemon {
     PokeApiPokeathlonStat getPokeathlonStatByName(@PathVariable String name);
 
     @GetMapping("/pokemon")
-    PokeApiNamedResourceList getPokemons();
+    PokeApiNamedResourceList getPokemons(@RequestParam Integer limit,
+                                         @RequestParam Integer offset);
 
     @GetMapping("/pokemon/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -110,7 +119,8 @@ public interface PokeApiPokemon {
     PokeApiPokedex getPokemonByName(@PathVariable String name);
 
     @GetMapping("/pokemon-color")
-    PokeApiNamedResourceList getPokemonColors();
+    PokeApiNamedResourceList getPokemonColors(@RequestParam Integer limit,
+                                              @RequestParam Integer offset);
 
     @GetMapping("/pokemon-color/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -121,7 +131,8 @@ public interface PokeApiPokemon {
     PokeApiPokemonColor getPokemonColorByName(@PathVariable String name);
 
     @GetMapping("/pokemon-form")
-    PokeApiNamedResourceList getPokemonForms();
+    PokeApiNamedResourceList getPokemonForms(@RequestParam Integer limit,
+                                             @RequestParam Integer offset);
 
     @GetMapping("/pokemon-form/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -132,7 +143,8 @@ public interface PokeApiPokemon {
     PokeApiPokemonForm getPokemonFormByName(@PathVariable String name);
 
     @GetMapping("/pokemon-habitat")
-    PokeApiNamedResourceList getPokemonHabitats();
+    PokeApiNamedResourceList getPokemonHabitats(@RequestParam Integer limit,
+                                                @RequestParam Integer offset);
 
     @GetMapping("/pokemon-habitat/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -143,7 +155,8 @@ public interface PokeApiPokemon {
     PokeApiPokemonHabitat getPokemonHabitatByName(@PathVariable String name);
 
     @GetMapping("/pokemon-shape")
-    PokeApiNamedResourceList getPokemonShapes();
+    PokeApiNamedResourceList getPokemonShapes(@RequestParam Integer limit,
+                                              @RequestParam Integer offset);
 
     @GetMapping("/pokemon-shape/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -154,7 +167,8 @@ public interface PokeApiPokemon {
     PokeApiPokemonShape getPokemonShapeByName(@PathVariable String name);
 
     @GetMapping("/pokemon-species")
-    PokeApiNamedResourceList getPokemonSpecies();
+    PokeApiNamedResourceList getPokemonSpecies(@RequestParam Integer limit,
+                                               @RequestParam Integer offset);
 
     @GetMapping("/pokemon-species/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -165,7 +179,8 @@ public interface PokeApiPokemon {
     PokeApiPokemonSpecies getPokemonSpeciesByName(@PathVariable String name);
 
     @GetMapping("/stat")
-    PokeApiNamedResourceList getStats();
+    PokeApiNamedResourceList getStats(@RequestParam Integer limit,
+                                      @RequestParam Integer offset);
 
     @GetMapping("/stat/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -176,7 +191,8 @@ public interface PokeApiPokemon {
     PokeApiStat getStatByName(@PathVariable String name);
 
     @GetMapping("/type")
-    PokeApiNamedResourceList getTypes();
+    PokeApiNamedResourceList getTypes(@RequestParam Integer limit,
+                                      @RequestParam Integer offset);
 
     @GetMapping("/type/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")

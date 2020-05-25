@@ -18,7 +18,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetAbilities_success() {
-        pokeApiPokemon.getAbilities();
+        pokeApiPokemon.getAbilities(1, 1);
     }
 
     @Test
@@ -28,7 +28,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetAbilityByName_success() {
-        pokeApiPokemon.getAbilities().getResults().stream()
+        pokeApiPokemon.getAbilities(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiPokemon::getAbilityByName);
@@ -36,7 +36,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetCharacteristics_success() {
-        pokeApiPokemon.getCharacteristics();
+        pokeApiPokemon.getCharacteristics(1, 1);
     }
 
     @Test
@@ -46,7 +46,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetEggGroups_success() {
-        pokeApiPokemon.getEggGroups();
+        pokeApiPokemon.getEggGroups(1, 1);
     }
 
     @Test
@@ -56,7 +56,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetEggGroupByName_success() {
-        pokeApiPokemon.getEggGroups().getResults().stream()
+        pokeApiPokemon.getEggGroups(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiPokemon::getEggGroupByName);
@@ -64,7 +64,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetGenders_success() {
-        pokeApiPokemon.getGenders();
+        pokeApiPokemon.getGenders(1, 1);
     }
 
     @Test
@@ -74,7 +74,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetGenderByName_success() {
-        pokeApiPokemon.getGenders().getResults().stream()
+        pokeApiPokemon.getGenders(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiPokemon::getGenderByName);
@@ -82,7 +82,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetGrowthRates_success() {
-        pokeApiPokemon.getGrowthRates();
+        pokeApiPokemon.getGrowthRates(1, 1);
     }
 
     @Test
@@ -92,7 +92,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetGrowthRateByName_success() {
-        pokeApiPokemon.getGrowthRates().getResults().stream()
+        pokeApiPokemon.getGrowthRates(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiPokemon::getGrowthRateByName);
@@ -100,7 +100,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetNatures_success() {
-        pokeApiPokemon.getNatures();
+        pokeApiPokemon.getNatures(1, 1);
     }
 
     @Test
@@ -110,7 +110,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetNatureByName_success() {
-        pokeApiPokemon.getNatures().getResults().stream()
+        pokeApiPokemon.getNatures(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiPokemon::getNatureByName);
@@ -118,7 +118,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetPokeathlonStats_success() {
-        pokeApiPokemon.getPokeathlonStats();
+        pokeApiPokemon.getPokeathlonStats(1, 1);
     }
 
     @Test
@@ -128,7 +128,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetPokeathlonStatByName_success() {
-        pokeApiPokemon.getPokeathlonStats().getResults().stream()
+        pokeApiPokemon.getPokeathlonStats(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiPokemon::getPokeathlonStatByName);
@@ -136,7 +136,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetPokemons_success() {
-        pokeApiPokemon.getPokemons();
+        pokeApiPokemon.getPokemons(1, 1);
     }
 
     @Test
@@ -146,7 +146,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetPokemonByName_success() {
-        pokeApiPokemon.getPokemons().getResults().stream()
+        pokeApiPokemon.getPokemons(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiPokemon::getPokemonByName);
@@ -154,7 +154,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetPokemonColors_success() {
-        pokeApiPokemon.getPokemonColors();
+        pokeApiPokemon.getPokemonColors(1, 1);
     }
 
     @Test
@@ -164,7 +164,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetPokemonColorByName_success() {
-        pokeApiPokemon.getPokemonColors().getResults().stream()
+        pokeApiPokemon.getPokemonColors(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiPokemon::getPokemonColorByName);
@@ -172,7 +172,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetPokemonForms_success() {
-        pokeApiPokemon.getPokemonForms();
+        pokeApiPokemon.getPokemonForms(1, 1);
     }
 
     @Test
@@ -182,7 +182,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetPokemonFormByName_success() {
-        pokeApiPokemon.getPokemonForms().getResults().stream()
+        pokeApiPokemon.getPokemonForms(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiPokemon::getPokemonFormByName);
@@ -190,7 +190,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetPokemonHabitats_success() {
-        pokeApiPokemon.getPokemonHabitats();
+        pokeApiPokemon.getPokemonHabitats(1, 1);
     }
 
     @Test
@@ -200,7 +200,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetPokemonHabitatByName_success() {
-        pokeApiPokemon.getPokemonHabitats().getResults().stream()
+        pokeApiPokemon.getPokemonHabitats(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiPokemon::getPokemonHabitatByName);
@@ -208,7 +208,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetPokemonShapes_success() {
-        pokeApiPokemon.getPokemonShapes();
+        pokeApiPokemon.getPokemonShapes(1, 1);
     }
 
     @Test
@@ -218,7 +218,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetPokemonShapeByName_success() {
-        pokeApiPokemon.getPokemonShapes().getResults().stream()
+        pokeApiPokemon.getPokemonShapes(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiPokemon::getPokemonShapeByName);
@@ -226,7 +226,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetPokemonSpecies_success() {
-        pokeApiPokemon.getPokemonSpecies();
+        pokeApiPokemon.getPokemonSpecies(1, 1);
     }
 
     @Test
@@ -236,7 +236,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetPokemonSpeciesByName_success() {
-        pokeApiPokemon.getPokemonSpecies().getResults().stream()
+        pokeApiPokemon.getPokemonSpecies(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiPokemon::getPokemonSpeciesByName);
@@ -244,7 +244,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetStats_success() {
-        pokeApiPokemon.getStats();
+        pokeApiPokemon.getStats(1, 1);
     }
 
     @Test
@@ -254,7 +254,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetStatByName_success() {
-        pokeApiPokemon.getStats().getResults().stream()
+        pokeApiPokemon.getStats(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiPokemon::getStatByName);
@@ -262,7 +262,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetTypes_success() {
-        pokeApiPokemon.getTypes();
+        pokeApiPokemon.getTypes(1, 1);
     }
 
     @Test
@@ -272,7 +272,7 @@ class PokeApiPokemonTest {
 
     @Test
     public void whenGetTypeByName_success() {
-        pokeApiPokemon.getTypes().getResults().stream()
+        pokeApiPokemon.getTypes(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiPokemon::getTypeByName);

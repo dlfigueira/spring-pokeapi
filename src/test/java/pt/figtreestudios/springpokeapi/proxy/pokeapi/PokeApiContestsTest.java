@@ -18,7 +18,7 @@ class PokeApiContestsTest {
 
     @Test
     public void whenGetContestTypes_success() {
-        pokeApiContests.getContestTypes();
+        pokeApiContests.getContestTypes(1, 1);
     }
 
     @Test
@@ -28,7 +28,7 @@ class PokeApiContestsTest {
 
     @Test
     public void whenGetContestTypeByName_success() {
-        pokeApiContests.getContestTypes().getResults().stream()
+        pokeApiContests.getContestTypes(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiContests::getContestTypeByName);
@@ -36,7 +36,7 @@ class PokeApiContestsTest {
 
     @Test
     public void whenGetContestEffects_success() {
-        pokeApiContests.getContestEffects();
+        pokeApiContests.getContestEffects(1, 1);
     }
 
     @Test
@@ -46,7 +46,7 @@ class PokeApiContestsTest {
 
     @Test
     public void whenGetSuperContestEffects_success() {
-        pokeApiContests.getSuperContestEffects();
+        pokeApiContests.getSuperContestEffects(1, 1);
     }
 
     @Test

@@ -5,6 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiItem;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiItemAttribute;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiItemCategory;
@@ -16,7 +17,8 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceLis
 @RequestMapping
 public interface PokeApiItems {
     @GetMapping("/item")
-    PokeApiNamedResourceList getItems();
+    PokeApiNamedResourceList getItems(@RequestParam Integer limit,
+                                      @RequestParam Integer offset);
 
     @GetMapping("/item/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -27,7 +29,8 @@ public interface PokeApiItems {
     PokeApiItem getItemByName(@PathVariable String name);
 
     @GetMapping("/item-attribute")
-    PokeApiNamedResourceList getItemAttributes();
+    PokeApiNamedResourceList getItemAttributes(@RequestParam Integer limit,
+                                               @RequestParam Integer offset);
 
     @GetMapping("/item-attribute/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -38,7 +41,8 @@ public interface PokeApiItems {
     PokeApiItemAttribute getItemAttributeByName(@PathVariable String name);
 
     @GetMapping("/item-category")
-    PokeApiNamedResourceList getItemCategories();
+    PokeApiNamedResourceList getItemCategories(@RequestParam Integer limit,
+                                               @RequestParam Integer offset);
 
     @GetMapping("/item-category/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -49,7 +53,8 @@ public interface PokeApiItems {
     PokeApiItemCategory getItemCategoryByName(@PathVariable String name);
 
     @GetMapping("/item-fling-effect")
-    PokeApiNamedResourceList getItemFlingEffects();
+    PokeApiNamedResourceList getItemFlingEffects(@RequestParam Integer limit,
+                                                 @RequestParam Integer offset);
 
     @GetMapping("/item-fling-effect/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -60,7 +65,8 @@ public interface PokeApiItems {
     PokeApiItemFlingEffect getItemFlingEffectByName(@PathVariable String name);
 
     @GetMapping("/item-pocket")
-    PokeApiNamedResourceList getItemPockets();
+    PokeApiNamedResourceList getItemPockets(@RequestParam Integer limit,
+                                            @RequestParam Integer offset);
 
     @GetMapping("/item-pocket/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")

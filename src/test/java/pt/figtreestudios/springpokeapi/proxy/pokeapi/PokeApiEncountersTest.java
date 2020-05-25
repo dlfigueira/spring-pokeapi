@@ -18,7 +18,7 @@ class PokeApiEncountersTest {
 
     @Test
     public void whenGetEncounterMethods_success() {
-        pokeApiEncounters.getEncounterMethods();
+        pokeApiEncounters.getEncounterMethods(1, 1);
     }
 
     @Test
@@ -28,7 +28,7 @@ class PokeApiEncountersTest {
 
     @Test
     public void whenGetEncounterMethodByName_success() {
-        pokeApiEncounters.getEncounterMethods().getResults().stream()
+        pokeApiEncounters.getEncounterMethods(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiEncounters::getEncounterMethodByName);
@@ -36,7 +36,7 @@ class PokeApiEncountersTest {
 
     @Test
     public void whenGetEncounterConditions_success() {
-        pokeApiEncounters.getEncounterConditions();
+        pokeApiEncounters.getEncounterConditions(1, 1);
     }
 
     @Test
@@ -46,7 +46,7 @@ class PokeApiEncountersTest {
 
     @Test
     public void whenGetEncounterConditionByName_success() {
-        pokeApiEncounters.getEncounterConditions().getResults().stream()
+        pokeApiEncounters.getEncounterConditions(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiEncounters::getEncounterConditionByName);
@@ -54,7 +54,7 @@ class PokeApiEncountersTest {
 
     @Test
     public void whenGetEncounterConditionValues_success() {
-        pokeApiEncounters.getEncounterConditionValues();
+        pokeApiEncounters.getEncounterConditionValues(1, 1);
     }
 
     @Test
@@ -64,7 +64,7 @@ class PokeApiEncountersTest {
 
     @Test
     public void whenGetEncounterConditionValueByName_success() {
-        pokeApiEncounters.getEncounterConditionValues().getResults().stream()
+        pokeApiEncounters.getEncounterConditionValues(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiEncounters::getEncounterConditionValueByName);

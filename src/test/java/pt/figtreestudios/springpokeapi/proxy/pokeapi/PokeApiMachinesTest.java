@@ -18,7 +18,7 @@ class PokeApiMachinesTest {
 
     @Test
     public void whenGetMachines_success() {
-        pokeApiMachines.getMachines();
+        pokeApiMachines.getMachines(1, 1);
     }
 
     @Test
@@ -28,7 +28,7 @@ class PokeApiMachinesTest {
 
     @Test
     public void whenGetMachineByName_success() {
-        pokeApiMachines.getMachines().getResults().stream()
+        pokeApiMachines.getMachines(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiMachines::getMachineByName);

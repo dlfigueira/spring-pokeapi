@@ -18,7 +18,7 @@ class PokeApiItemsTest {
 
     @Test
     public void whenGetItems_success() {
-        pokeApiItems.getItems();
+        pokeApiItems.getItems(1, 1);
     }
 
     @Test
@@ -28,7 +28,7 @@ class PokeApiItemsTest {
 
     @Test
     public void whenGetItemByName_success() {
-        pokeApiItems.getItems().getResults().stream()
+        pokeApiItems.getItems(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiItems::getItemByName);
@@ -36,7 +36,7 @@ class PokeApiItemsTest {
 
     @Test
     public void whenGetItemAttributes_success() {
-        pokeApiItems.getItemAttributes();
+        pokeApiItems.getItemAttributes(1, 1);
     }
 
     @Test
@@ -46,7 +46,7 @@ class PokeApiItemsTest {
 
     @Test
     public void whenGetItemAttributeByName_success() {
-        pokeApiItems.getItemAttributes().getResults().stream()
+        pokeApiItems.getItemAttributes(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiItems::getItemAttributeByName);
@@ -54,7 +54,7 @@ class PokeApiItemsTest {
 
     @Test
     public void whenGetItemCategories_success() {
-        pokeApiItems.getItemCategories();
+        pokeApiItems.getItemCategories(1, 1);
     }
 
     @Test
@@ -64,7 +64,7 @@ class PokeApiItemsTest {
 
     @Test
     public void whenGetItemCategoryByName_success() {
-        pokeApiItems.getItemCategories().getResults().stream()
+        pokeApiItems.getItemCategories(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiItems::getItemCategoryByName);
@@ -72,7 +72,7 @@ class PokeApiItemsTest {
 
     @Test
     public void whenGetItemFlingEffects_success() {
-        pokeApiItems.getItemFlingEffects();
+        pokeApiItems.getItemFlingEffects(1, 1);
     }
 
     @Test
@@ -82,7 +82,7 @@ class PokeApiItemsTest {
 
     @Test
     public void whenGetItemFlingEffectByName_success() {
-        pokeApiItems.getItemFlingEffects().getResults().stream()
+        pokeApiItems.getItemFlingEffects(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiItems::getItemFlingEffectByName);
@@ -90,7 +90,7 @@ class PokeApiItemsTest {
 
     @Test
     public void whenGetItemPockets_success() {
-        pokeApiItems.getItemPockets();
+        pokeApiItems.getItemPockets(1, 1);
     }
 
     @Test
@@ -100,7 +100,7 @@ class PokeApiItemsTest {
 
     @Test
     public void whenGetItemPocketByName_success() {
-        pokeApiItems.getItemPockets().getResults().stream()
+        pokeApiItems.getItemPockets(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiItems::getItemPocketByName);

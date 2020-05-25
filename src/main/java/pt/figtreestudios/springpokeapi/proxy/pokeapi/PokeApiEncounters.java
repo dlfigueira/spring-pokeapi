@@ -5,6 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiEncounterCondition;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiEncounterConditionValue;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiEncounterMethod;
@@ -14,7 +15,8 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceLis
 @RequestMapping
 public interface PokeApiEncounters {
     @GetMapping("/encounter-method")
-    PokeApiNamedResourceList getEncounterMethods();
+    PokeApiNamedResourceList getEncounterMethods(@RequestParam Integer limit,
+                                                 @RequestParam Integer offset);
 
     @GetMapping("/encounter-method/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -25,7 +27,8 @@ public interface PokeApiEncounters {
     PokeApiEncounterMethod getEncounterMethodByName(@PathVariable String name);
 
     @GetMapping("/encounter-condition")
-    PokeApiNamedResourceList getEncounterConditions();
+    PokeApiNamedResourceList getEncounterConditions(@RequestParam Integer limit,
+                                                    @RequestParam Integer offset);
 
     @GetMapping("/encounter-condition/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
@@ -36,7 +39,8 @@ public interface PokeApiEncounters {
     PokeApiEncounterCondition getEncounterConditionByName(@PathVariable String name);
 
     @GetMapping("/encounter-condition-value")
-    PokeApiNamedResourceList getEncounterConditionValues();
+    PokeApiNamedResourceList getEncounterConditionValues(@RequestParam Integer limit,
+                                                         @RequestParam Integer offset);
 
     @GetMapping("/encounter-condition-value/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")

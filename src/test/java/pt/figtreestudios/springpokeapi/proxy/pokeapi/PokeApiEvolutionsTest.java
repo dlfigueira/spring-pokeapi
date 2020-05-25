@@ -18,7 +18,7 @@ class PokeApiEvolutionsTest {
 
     @Test
     public void whenGetEvolutionChains_success() {
-        pokeApiEvolution.getEvolutionChains();
+        pokeApiEvolution.getEvolutionChains(1, 1);
     }
 
     @Test
@@ -28,7 +28,7 @@ class PokeApiEvolutionsTest {
 
     @Test
     public void whenGetEvolutionTriggers_success() {
-        pokeApiEvolution.getEvolutionTriggers();
+        pokeApiEvolution.getEvolutionTriggers(1, 1);
     }
 
     @Test
@@ -38,7 +38,7 @@ class PokeApiEvolutionsTest {
 
     @Test
     public void whenGetEvolutionTriggerByName_success() {
-        pokeApiEvolution.getEvolutionTriggers().getResults().stream()
+        pokeApiEvolution.getEvolutionTriggers(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiEvolution::getEvolutionTriggerByName);

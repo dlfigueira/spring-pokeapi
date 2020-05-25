@@ -5,6 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiMachine;
 import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceList;
 
@@ -12,7 +13,8 @@ import pt.figtreestudios.springpokeapi.proxy.pokeapi.api.PokeApiNamedResourceLis
 @RequestMapping
 public interface PokeApiMachines {
     @GetMapping("/machine")
-    PokeApiNamedResourceList getMachines();
+    PokeApiNamedResourceList getMachines(@RequestParam Integer limit,
+                                         @RequestParam Integer offset);
 
     @GetMapping("/machine/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")

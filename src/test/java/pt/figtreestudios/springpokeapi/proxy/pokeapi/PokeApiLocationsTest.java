@@ -18,7 +18,7 @@ class PokeApiLocationsTest {
 
     @Test
     public void whenGetLocations_success() {
-        pokeApiLocations.getLocations();
+        pokeApiLocations.getLocations(1, 1);
     }
 
     @Test
@@ -28,7 +28,7 @@ class PokeApiLocationsTest {
 
     @Test
     public void whenGetLocationByName_success() {
-        pokeApiLocations.getLocations().getResults().stream()
+        pokeApiLocations.getLocations(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiLocations::getLocationByName);
@@ -36,7 +36,7 @@ class PokeApiLocationsTest {
 
     @Test
     public void whenGetLocationAreas_success() {
-        pokeApiLocations.getLocationAreas();
+        pokeApiLocations.getLocationAreas(1, 1);
     }
 
     @Test
@@ -46,7 +46,7 @@ class PokeApiLocationsTest {
 
     @Test
     public void whenGetLocationAreaByName_success() {
-        pokeApiLocations.getLocationAreas().getResults().stream()
+        pokeApiLocations.getLocationAreas(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiLocations::getLocationAreaByName);
@@ -54,7 +54,7 @@ class PokeApiLocationsTest {
 
     @Test
     public void whenGetPalParkAreas_success() {
-        pokeApiLocations.getPalParkAreas();
+        pokeApiLocations.getPalParkAreas(1, 1);
     }
 
     @Test
@@ -64,7 +64,7 @@ class PokeApiLocationsTest {
 
     @Test
     public void whenGetPalParkAreaByName_success() {
-        pokeApiLocations.getPalParkAreas().getResults().stream()
+        pokeApiLocations.getPalParkAreas(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiLocations::getPalParkAreaByName);
@@ -72,7 +72,7 @@ class PokeApiLocationsTest {
 
     @Test
     public void whenGetRegions_success() {
-        pokeApiLocations.getRegions();
+        pokeApiLocations.getRegions(1, 1);
     }
 
     @Test
@@ -82,7 +82,7 @@ class PokeApiLocationsTest {
 
     @Test
     public void whenGetRegionByName_success() {
-        pokeApiLocations.getRegions().getResults().stream()
+        pokeApiLocations.getRegions(1, 1).getResults().stream()
                 .limit(1)
                 .map(PokeApiNamedApiResource::getName)
                 .forEach(pokeApiLocations::getRegionByName);
