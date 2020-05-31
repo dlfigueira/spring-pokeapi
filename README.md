@@ -82,4 +82,4 @@ Each component points to a separate resource in PokeAPI.
 Each of these resources exposes a method to get all resources (paginated with a limit and offset) and methods to get resource by id or name, where available.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the [MIT license](http://opensource.org/licenses/mit-license.php)
