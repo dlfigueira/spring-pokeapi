@@ -10,7 +10,7 @@
     </parent>
     <groupId>pt.figtreestudios</groupId>
     <artifactId>spring-pokeapi</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>spring-pokeapi</name>
     <description>Spring library for the PokéAPI project</description>
 
