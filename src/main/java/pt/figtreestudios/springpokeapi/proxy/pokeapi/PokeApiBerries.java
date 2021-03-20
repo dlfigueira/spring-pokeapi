@@ -26,27 +26,27 @@ public interface PokeApiBerries {
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
     PokeApiBerry getBerryByName(@PathVariable String name);
 
-    @GetMapping("/berry")
+    @GetMapping("/berry-firmness")
     PokeApiNamedResourceList getBerryFirmnesses(@RequestParam Integer limit,
                                                 @RequestParam Integer offset);
 
-    @GetMapping("/berry/{id}")
+    @GetMapping("/berry-firmness/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
     PokeApiBerryFirmness getBerryFirmnessById(@PathVariable Integer id);
 
-    @GetMapping("/berry/{name}")
+    @GetMapping("/berry-firmness/{name}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
     PokeApiBerryFirmness getBerryFirmnessByName(@PathVariable String name);
 
-    @GetMapping("/berry")
+    @GetMapping("/berry-flavor")
     PokeApiNamedResourceList getBerryFlavors(@RequestParam Integer limit,
                                              @RequestParam Integer offset);
 
-    @GetMapping("/berry/{id}")
+    @GetMapping("/berry-flavor/{id}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
     PokeApiBerryFlavor getBerryFlavorById(@PathVariable Integer id);
 
-    @GetMapping("/berry/{name}")
+    @GetMapping("/berry-flavor/{name}")
     @Cacheable(value = "cache", key = "#root.methodName+#root.args")
     PokeApiBerryFlavor getBerryFlavorByName(@PathVariable String name);
 }

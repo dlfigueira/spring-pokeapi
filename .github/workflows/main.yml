@@ -13,6 +13,6 @@ jobs:
         with:
           java-version: 11
       - name: Publish package
-        run: mvn --batch-mode deploy
+        run: mvn -DskipTests=true --batch-mode deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
